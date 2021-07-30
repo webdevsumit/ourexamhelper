@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import './../css/Nav.css';
+import { Link } from "react-router-dom";
 
 
 function Nav(){
@@ -22,10 +23,10 @@ function Nav(){
 				<div className="menu-content" onClick={()=>setMenu(false)}>
 					<h2 className="nav-menu-cross">X</h2>
 					<div className="menu-items">
-						<a className="links" href="#">HOME</a><br/>
-						<a className="links" href="#">CURRENT AFFAIRS</a><br/>
-						<a className="links" href="#">LOGIN</a><br/>
-						<a className="links" href="#">SIGNUP</a><br/>
+						<Link className="links" to="/somewhere">HOME</Link><br/>
+						<Link className="links" to="/somewhere">CURRENT AFFAIRS</Link><br/>
+						<Link className="links" to="/somewhere">LOGIN</Link><br/>
+						<Link className="links" to="/somewhere">SIGNUP</Link><br/>
 					</div>
 				</div>
 				}
