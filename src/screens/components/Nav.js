@@ -23,10 +23,11 @@ function Nav(){
 				<div className="menu-content" onClick={()=>setMenu(false)}>
 					<h2 className="nav-menu-cross">X</h2>
 					<div className="menu-items">
-						<Link className="links" to="/somewhere">HOME</Link><br/>
-						<Link className="links" to="/somewhere">CURRENT AFFAIRS</Link><br/>
-						<Link className="links" to="/somewhere">LOGIN</Link><br/>
-						<Link className="links" to="/somewhere">SIGNUP</Link><br/>
+						<Link className="links" to="/">HOME</Link><br/>
+						<Link className="links" to="/curret-affairs">CURRENT AFFAIRS</Link><br/>
+						<Link className="links" to="/contact-us">CONTACT US</Link><br/>
+						<Link className="links" to="/login">LOGIN</Link><br/>
+						<Link className="links" to="/signup">SIGNUP</Link><br/>
 					</div>
 				</div>
 				}

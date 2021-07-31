@@ -56,7 +56,7 @@ nav{
 	transition:all ease 1s;
 	animation:grow 1s ease 1s forward;
 	overflow:hidden;
-	background:#aaa;
+	background:grey;
 }
 
 @keyframe grow{
@@ -77,10 +77,10 @@ nav{
 }
 
 .links{
+	display:block;
 	font-size:14px;
 	width:100%;
 	color:white;
-	padding:10px;
 	text-decoration:none;
 	transition:all ease 0.4s;
 }

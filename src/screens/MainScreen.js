@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import "./css/MainScreen.css";
 import { Link } from 'react-router-dom';
 
@@ -58,7 +59,7 @@ function MainScreen(){
 				</div>
 				
 			</div>
-			
+			<Footer/>
 		</div>
 	)
 }
