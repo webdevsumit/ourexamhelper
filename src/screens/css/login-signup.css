@@ -1,0 +1,79 @@
+.main-container{
+	width:100%;
+	height:100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+
+.main-container>div{
+	padding:30px;
+	background:linear-gradient(135deg, blue, lightblue);
+	border-radius:20px;
+	color:white;
+	font-family:mononspace;
+	box-shadow:-1px -1px 2px grey;
+}
+
+.login-signup-form>input{
+	background:transparent;
+	border:none;
+	outline:none;
+	margin:5px;
+	color:white;
+	border-bottom:1px solid white;
+	padding:4px;
+	letter-spacing:1.5px;
+	font-family:mononspace;
+	transition:all ease 0.4s;
+}
+
+.login-signup-form>input:hover{
+	border-bottom:2px solid white;
+}
+
+.login-signup-form>input::placeholder{
+	color:white;
+	opacity:0.9;
+}
+
+.login-signup-form>button{
+	border:none;
+	outline:none;
+	border-radius:10px;
+	background:white;
+	padding:5px 10px;
+	color:black;
+	margin:20px auto;
+	cursor:pointer;
+	font-weight:600;
+	box-shadow:-1px -1px 4px grey;
+	font-size:14px;
+	transition:all ease 0.4s;
+}
+
+.login-signup-form>button:hover{
+	font-size:15px;
+}
+
+.show-password-btn{
+	margin-top:20px;
+	padding:8px;
+	text-align:left;
+	cursor:pointer;
+}
+
+.auth-error{
+	color:brown;
+	padding:10px;
+	margin:10px;
+	border:1px solid brown;
+	font-weight:300;
+	font-family:mononspace;
+}
+
+.forgot-pass{
+	cursor:pointer;
+	padding:10px;
+}

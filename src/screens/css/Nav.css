@@ -87,5 +87,6 @@ nav{
 
 .links:hover{
 	text-decoration:underline;
+	font-size:15px;
 }
 

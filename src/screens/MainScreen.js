@@ -1,23 +1,45 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import "./css/MainScreen.css";
 import { Link } from 'react-router-dom';
+import fire from "./../fire";
 
 
 function MainScreen(){
+
+	const [user, setUser] = useState(false);
+
+	useEffect(()=>{
+		fire.auth().onAuthStateChanged(user=>{
+			if(user) {
+				if(user.emailVerified) {
+					setUser(user);
+				}
+				else{
+					user.sendEmailVerification();
+					alert("Email sent, please verify and then login again!");
+					fire.auth().signOut();
+				}
+			}
+			else setUser(false);
+		})
+	},[]);
+
+	
+	
 	return(
 		<div>
-			<Nav/>
+			<Nav removeUser={()=>setUser(false)}/>
 
 			<div className="main-content">
 			
 				<img src="./assets/o-back-img.png" alt="background" width="100%"/>
 				
-				<div className="btn-group">
+				{!user ? <div className="btn-group">
 					<Link to="/login"><button>LOGIN</button></Link>
 					<Link to="/signup"><button>SIGNUP</button></Link>
-				</div>
+				</div>:<div className="gap"></div>}
 
 				<hr/>
 				
