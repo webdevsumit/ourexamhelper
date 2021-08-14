@@ -1,5 +1,51 @@
 
 
 .date-card>img{
-	width:100px;
+	max-width:160px;
+	max-height:160px;
+	position:absolute;
+	opacity:0;
+	transition:all ease 0.3s;
 }
+
+.date-card>h6{
+	color:blue;
+	width:100px;
+	text-align:center;
+	transition:all ease 0.3s;
+}
+
+.day{
+	font-size:40px;
+	font-weight:900;
+	transition:all ease 0.3s;
+}
+
+.date-card>p>em{
+	font-size:10px;
+	text-align:center;
+	transition:all ease 0.3s;
+}
+
+.date-card{
+	width:160px;
+	height:160px;
+	padding:10px;
+	box-shadow:1px 1px 4px 2px grey;
+	text-align:center;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	margin:10px;
+	transition:all ease 0.3s;
+}
+
+.date-card:hover>img{
+	opacity:1;
+}
+
+.date-card:hover .day, .date-card:hover p, .date-card:hover h6 {
+	opacity:0;
+}
+
