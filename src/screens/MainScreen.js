@@ -72,10 +72,10 @@ function MainScreen(){
 							<h6>Previous Year papers</h6>
 						</Link>
 	
-						<Link to="/contact-us">
+						<a href="mailto:sumitdhakad2232@gmail.com">
 							<img className="ca-icon" src="./assets/airplane-icon.png" alt="icon" />
 							<h6>Contact us to add more</h6>
-						</Link>
+						</a>
 						
 					</div>
 				</div>
