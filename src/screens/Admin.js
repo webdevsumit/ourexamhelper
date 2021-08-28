@@ -23,12 +23,22 @@ function Admin(){
 		})
 	},[]);
 
+	const [title, setTitle] = useState('');
+	const [date, setDate] = useState('');
+	const [thumbnail, setThumbnail] = useState('');
+	const [mainImage, setMainImage] = useState('');
+	const [description, setDescription] = useState('');
 	
 	return(
 		<div className='admin'>
 			<h4>ADMIN</h4>
 			{user?<div>
-				{JSON.stringify(user)}
+				<input type="text" placeholder="Title" value={title} onChange={e=>setTitle(e.target.value)}/><br/><br/>
+				<input type="file" placeholder="Thumbnail" accept="image/*" onChange={e=>setThumbnail(e.target.files[0])}/><br/><br/>
+				<input type="file" accept="image/*" onChange={e=>setMainImage(e.target.files[0])}/><br/><br/>
+				<textarea cols="40" rows="30" placeholder="Description" value={description} onChange={e=>setDescription(e.target.value)}></textarea><br/><br/>
+				<input type="datetime-local" placeholder="Date" onChange={e=>setDate(e.target.value)}/><br/><br/>
+				<input type="submit" />
 			</div>:<p>This page not for you.</p>}
 		</div>
 	);
