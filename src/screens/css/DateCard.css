@@ -4,7 +4,7 @@
 	max-width:160px;
 	max-height:160px;
 	position:absolute;
-	opacity:0;
+	opacity:0.2;
 	transition:all ease 0.3s;
 	cursor: pointer;
 }
