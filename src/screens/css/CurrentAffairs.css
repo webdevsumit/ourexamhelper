@@ -1,4 +1,6 @@
-
+*{
+	box-sizing: border-box;
+}
 .current-affairs-head{
 	margin:10px;
 }
@@ -14,7 +16,7 @@
 .detailed-page{
 	z-index:2;
 	position:fixed;
-	width:100%;
+	width:60%;
 	height:100vh;
 	top:0;
 	left:0;
@@ -50,4 +52,19 @@
 .detailed-page>h6{
 	opacity:0.7;
 	font-weight:300;
+}
+
+@media only screen and (min-width:600px) {
+	.detailed-page{
+		width: 50%;
+		left: 25%;
+	}
+
+	.detailed-page>button{
+		right: 72%;
+	}
+	.cards{
+		width: 65%;
+		margin: auto;
+	}
 }

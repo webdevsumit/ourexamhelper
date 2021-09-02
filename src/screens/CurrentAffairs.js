@@ -67,14 +67,15 @@ function CurrentAffairs(){
 					click={getDetails}
 					/>)}
 			</div>
-			{details && <div className='detailed-page'>
-				<h3>{details.Name}</h3>
-				<h6><em>{details.date}</em></h6>
-				<img src={details.details[0].Image}/>
-				<button onClick={()=>setDetails(false)}>X</button>
-				<p>{details.details[0].Detail}</p>
-				<img src={details.Image}/>
-			</div>}
+			{details &&
+				<div className='detailed-page'>
+						<h3>{details.Name}</h3>
+						<h6><em>{details.date}</em></h6>
+						<img src={details.details[0].Image}/>
+						<button onClick={()=>setDetails(false)}>X</button>
+						<p>{details.details[0].Detail}</p>
+						<img src={details.Image}/>
+				</div>}
 		</div>
 	)
 }

@@ -6,6 +6,7 @@
 	position:absolute;
 	opacity:0;
 	transition:all ease 0.3s;
+	cursor: pointer;
 }
 
 .date-card>h6{
@@ -13,18 +14,21 @@
 	width:100px;
 	text-align:center;
 	transition:all ease 0.3s;
+	cursor: pointer;
 }
 
 .day{
 	font-size:40px;
 	font-weight:900;
 	transition:all ease 0.3s;
+	cursor: pointer;
 }
 
 .date-card>p>em{
 	font-size:10px;
 	text-align:center;
 	transition:all ease 0.3s;
+	cursor: pointer;
 }
 
 .date-card{
@@ -39,13 +43,16 @@
 	align-items:center;
 	margin:10px;
 	transition:all ease 0.3s;
+	cursor: pointer;
 }
 
 .date-card:hover>img{
 	opacity:1;
+	cursor: pointer;
 }
 
 .date-card:hover .day, .date-card:hover p, .date-card:hover h6 {
 	opacity:0;
+	cursor: pointer;
 }
 
