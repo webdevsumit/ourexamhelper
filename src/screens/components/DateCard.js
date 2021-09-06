@@ -20,7 +20,7 @@ function DateCard(props){
 			)
 		}>
 			<p className="day">{date}</p>
-			<p><em>{monthNames[month]+" "+year}</em></p>
+			<p><em>{monthNames[month-1]+" "+year}</em></p>
 			<img src={props.Image} alt="back img"/>
 			<h6>{props.Name}</h6>
 		</div>
