@@ -12,13 +12,13 @@ function CurrentAffairs(){
 
 	const getData=()=>{
 		setLoading(true);
-		ref.get().then(querySnapshot=>{
+		ref.orderBy("Date", "desc").get().then(querySnapshot=>{
 			const items = [];
 			querySnapshot.forEach(doc=>{
 				items.push({'id':doc.id, 'data': doc.data()});
 			});
 			
-			setData(items.reverse());
+			setData(items);
 			setLoading(false);
 		}).catch(err=>{
 			alert(err);
@@ -61,7 +61,7 @@ function CurrentAffairs(){
 				{data.map(d=><DateCard
 					key={d.id}
 					id={d.id}
-					PostDate={d.data.Date.seconds}
+					PostDate={d.data.Date}
 					Image={d.data.Image}
 					Name={d.data.Name}
 					click={getDetails}

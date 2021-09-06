@@ -9,7 +9,7 @@ function Admin(){
 
 	useEffect(()=>{
 		fire.auth().onAuthStateChanged(user=>{
-			if(user) {
+			if(user && user.email==='baani.rathor@gmail.com') {
 				if(user.emailVerified) {
 					setUser(user);
 				}
@@ -28,18 +28,47 @@ function Admin(){
 	const [thumbnail, setThumbnail] = useState('');
 	const [mainImage, setMainImage] = useState('');
 	const [description, setDescription] = useState('');
+	const [msg , setMsg] = useState('');
+
+	const ref = fire.firestore().collection("current-affair-days");
+
+	const onSubmitForm=(e)=>{
+		e.preventDefault();
+		if(title && date && thumbnail && mainImage && description){
+			ref.add({
+				Name:title,
+				Date:date,
+				Image:thumbnail
+			}).then(addedData=>{
+				ref.doc(addedData.id).collection("Details").add({
+					Detail:description,
+					Image:mainImage
+				}).then(d=>{
+					setTitle('');
+					setDate('');
+					setThumbnail('');
+					setMainImage('');
+					setDescription('');
+					setMsg('');
+				})
+			});
+		}else{
+			setMsg("Please fill all fields!")
+		}
+	}
 	
 	return(
 		<div className='admin'>
 			<h4>ADMIN</h4>
-			{user?<div>
+			{user?<div className="form">
 				<input type="text" placeholder="Title" value={title} onChange={e=>setTitle(e.target.value)}/><br/><br/>
-				<input type="file" placeholder="Thumbnail" accept="image/*" onChange={e=>setThumbnail(e.target.files[0])}/><br/><br/>
-				<input type="file" accept="image/*" onChange={e=>setMainImage(e.target.files[0])}/><br/><br/>
+				<input type="text" placeholder="Thumbnail and second image URL" onChange={e=>setThumbnail(e.target.value)}/><br/><br/>
+				<input type="text" placeholder="Main or first image URL" onChange={e=>setMainImage(e.target.value)}/><br/><br/>
 				<textarea cols="40" rows="30" placeholder="Description" value={description} onChange={e=>setDescription(e.target.value)}></textarea><br/><br/>
-				<input type="datetime-local" placeholder="Date" onChange={e=>setDate(e.target.value)}/><br/><br/>
-				<input type="submit" />
-			</div>:<p>This page not for you.</p>}
+				<input type="text" placeholder="eg. 2021-9-25" onChange={e=>setDate(e.target.value)}/><br/><br/>
+				{msg && <p className="err-msg">{msg}</p>}
+				<input type="submit" onClick={onSubmitForm}/>
+			</div>:<p className="admin-not-p">This page is just for Admin Users.</p>}
 		</div>
 	);
 }

@@ -3,10 +3,10 @@ import "./../css/DateCard.css"
 
 
 function DateCard(props){
-	const fDate = new Date(props.PostDate*1000);
-	const date = fDate.getDate();
-	const month = fDate.getMonth();
-	const year = fDate.getFullYear();
+	const fDate = props.PostDate.split('-');
+	const date = fDate[2];
+	const month = fDate[1];
+	const year = fDate[0];
 	const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 	
 	
